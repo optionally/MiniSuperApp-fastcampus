@@ -41,6 +41,10 @@
 		F5EAA232270B3A8F00EF2B70 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAA231270B3A8F00EF2B70 /* UIView+Utils.swift */; };
 		F5EAA234270B3A9A00EF2B70 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAA233270B3A9A00EF2B70 /* UIColor+Utils.swift */; };
 		F5EAA236270B3AA600EF2B70 /* UIColor+Super.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAA235270B3AA600EF2B70 /* UIColor+Super.swift */; };
+		F7BEC3B32734C59400DBD90F /* SuperPayDashBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BEC3AF2734C59400DBD90F /* SuperPayDashBoardRouter.swift */; };
+		F7BEC3B42734C59400DBD90F /* SuperPayDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BEC3B02734C59400DBD90F /* SuperPayDashBoardViewController.swift */; };
+		F7BEC3B52734C59400DBD90F /* SuperPayDashBoardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BEC3B12734C59400DBD90F /* SuperPayDashBoardBuilder.swift */; };
+		F7BEC3B62734C59400DBD90F /* SuperPayDashBoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BEC3B22734C59400DBD90F /* SuperPayDashBoardInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,10 @@
 		F5EAA231270B3A8F00EF2B70 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		F5EAA233270B3A9A00EF2B70 /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		F5EAA235270B3AA600EF2B70 /* UIColor+Super.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Super.swift"; sourceTree = "<group>"; };
+		F7BEC3AF2734C59400DBD90F /* SuperPayDashBoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardRouter.swift; sourceTree = "<group>"; };
+		F7BEC3B02734C59400DBD90F /* SuperPayDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardViewController.swift; sourceTree = "<group>"; };
+		F7BEC3B12734C59400DBD90F /* SuperPayDashBoardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardBuilder.swift; sourceTree = "<group>"; };
+		F7BEC3B22734C59400DBD90F /* SuperPayDashBoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayDashBoardInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 		F57F6ADA26DB49EA00C0117D /* FinanceHome */ = {
 			isa = PBXGroup;
 			children = (
+				F7BEC3AE2734C56800DBD90F /* SuperPayDashBoard */,
 				F57F6AE426DB4A2700C0117D /* FinanceHomeRouter.swift */,
 				F57F6AE526DB4A2700C0117D /* FinanceHomeViewController.swift */,
 				F57F6AE626DB4A2700C0117D /* FinanceHomeBuilder.swift */,
@@ -222,6 +231,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F7BEC3AE2734C56800DBD90F /* SuperPayDashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				F7BEC3AF2734C59400DBD90F /* SuperPayDashBoardRouter.swift */,
+				F7BEC3B02734C59400DBD90F /* SuperPayDashBoardViewController.swift */,
+				F7BEC3B12734C59400DBD90F /* SuperPayDashBoardBuilder.swift */,
+				F7BEC3B22734C59400DBD90F /* SuperPayDashBoardInteractor.swift */,
+			);
+			path = SuperPayDashBoard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,9 +326,11 @@
 				F5EAA220270B39DC00EF2B70 /* PushModalPresentationController.swift in Sources */,
 				F57F6AF126DB4A2D00C0117D /* ProfileHomeViewController.swift in Sources */,
 				F57F6AF326DB4A2D00C0117D /* ProfileHomeInteractor.swift in Sources */,
+				F7BEC3B42734C59400DBD90F /* SuperPayDashBoardViewController.swift in Sources */,
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
 				F5EAA230270B3A7100EF2B70 /* RIBs+Utils.swift in Sources */,
 				F5EAA22B270B3A4500EF2B70 /* TransportHomeBuilder.swift in Sources */,
+				F7BEC3B52734C59400DBD90F /* SuperPayDashBoardBuilder.swift in Sources */,
 				F5EAA21D270B395900EF2B70 /* HomeWidgetModel.swift in Sources */,
 				F5EAA21E270B395900EF2B70 /* AppHomeRouter.swift in Sources */,
 				F5EAA21A270B395900EF2B70 /* AppHomeBuilder.swift in Sources */,
@@ -323,8 +345,10 @@
 				F57F6AE826DB4A2700C0117D /* FinanceHomeRouter.swift in Sources */,
 				F57F6AE926DB4A2700C0117D /* FinanceHomeViewController.swift in Sources */,
 				F5829F5926DB2BC400BFA8CD /* AppDelegate.swift in Sources */,
+				F7BEC3B32734C59400DBD90F /* SuperPayDashBoardRouter.swift in Sources */,
 				F5EAA21C270B395900EF2B70 /* AppHomeViewController.swift in Sources */,
 				F5EAA236270B3AA600EF2B70 /* UIColor+Super.swift in Sources */,
+				F7BEC3B62734C59400DBD90F /* SuperPayDashBoardInteractor.swift in Sources */,
 				F5829F7926DB397300BFA8CD /* AppComponent.swift in Sources */,
 				F57F6AF026DB4A2D00C0117D /* ProfileHomeRouter.swift in Sources */,
 				F5829F7426DB34AA00BFA8CD /* AppRootRouter.swift in Sources */,
@@ -467,6 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U9JNCP8748;
 				INFOPLIST_FILE = MiniSuperApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U9JNCP8748;
 				INFOPLIST_FILE = MiniSuperApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
