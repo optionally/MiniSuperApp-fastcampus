@@ -2,7 +2,7 @@
 //  SuperPayDashBoardRouter.swift
 //  MiniSuperApp
 //
-//  Created by teamwink on 2021/11/05.
+//  Created by hayden on 2021/11/05.
 //
 
 import ModernRIBs
@@ -16,8 +16,10 @@ protocol SuperPayDashBoardViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 
-final class SuperPayDashBoardRouter: ViewableRouter<SuperPayDashBoardInteractable, SuperPayDashBoardViewControllable>, SuperPayDashBoardRouting {
-
+final class SuperPayDashBoardRouter: ViewableRouter<SuperPayDashBoardInteractable,
+                                     SuperPayDashBoardViewControllable>,
+                                     SuperPayDashBoardRouting {
+    
     // TODO: Constructor inject child builder protocols to allow building children.
     override init(interactor: SuperPayDashBoardInteractable, viewController: SuperPayDashBoardViewControllable) {
         super.init(interactor: interactor, viewController: viewController)

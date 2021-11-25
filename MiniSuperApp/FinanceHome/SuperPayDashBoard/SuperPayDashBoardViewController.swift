@@ -2,7 +2,7 @@
 //  SuperPayDashBoardViewController.swift
 //  MiniSuperApp
 //
-//  Created by teamwink on 2021/11/05.
+//  Created by hayden on 2021/11/05.
 //
 
 import ModernRIBs
@@ -14,7 +14,121 @@ protocol SuperPayDashBoardPresentableListener: AnyObject {
     // interactor class.
 }
 
-final class SuperPayDashBoardViewController: UIViewController, SuperPayDashBoardPresentable, SuperPayDashBoardViewControllable {
-
+final class SuperPayDashBoardViewController: UIViewController,
+                                             SuperPayDashBoardPresentable,
+                                             SuperPayDashBoardViewControllable {
+    
     weak var listener: SuperPayDashBoardPresentableListener?
+    
+    private let headerStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.text = "슈퍼페이 잔고"
+        return label
+    }()
+    
+    private lazy var topupButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("충전하기", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(topupButtonDidTap), for: .touchUpInside)
+        return button
+    }()
+    
+    private let cardView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemIndigo
+        view.layer.cornerRadius = 16
+        view.layer.cornerCurve = .continuous
+        return view
+    }()
+    
+    private let currenyLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.text = "원"
+        label.textColor = .white
+        return label
+    }()
+    
+    private let balanceLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.textColor = .white
+        label.text = "10,000"
+        return label
+    }()
+    
+    private let balanceStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.alignment = .fill
+        stack.distribution = .equalSpacing
+        stack.axis = .horizontal
+        stack.spacing = 4
+        return stack
+    }()
+
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        setupViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    private func setupViews() {
+        view.addSubview(headerStackView)
+        view.addSubview(cardView)
+        view.addSubview(balanceStackView)
+
+        [titleLabel, topupButton].forEach {
+            headerStackView.addArrangedSubview($0)
+        }
+        
+        [balanceLabel, currenyLabel].forEach {
+            balanceStackView.addArrangedSubview($0)
+        }
+
+        
+        NSLayoutConstraint.activate([
+            headerStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            headerStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            headerStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            cardView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 10),
+            cardView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            cardView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            cardView.heightAnchor.constraint(equalToConstant: 180),
+            cardView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            
+            balanceStackView.centerXAnchor.constraint(equalTo: cardView.centerXAnchor),
+            balanceStackView.centerYAnchor.constraint(equalTo: cardView.centerYAnchor)
+        ])
+    }
+    
+    func updateBalance(_ balance: String) {
+        balanceLabel.text = balance
+    }
+    
+    @objc
+    private func topupButtonDidTap() {
+        
+    }
 }
