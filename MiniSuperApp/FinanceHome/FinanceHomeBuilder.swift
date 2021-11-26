@@ -4,7 +4,8 @@ protocol FinanceHomeDependency: Dependency {
 }
 
 final class FinanceHomeComponent: Component<FinanceHomeDependency>,
-                                  SuperPayDashBoardDependency {
+                                  SuperPayDashboardDependency,
+                                  CardOnFileDashboardDependency {
     
     var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublisher }
     private let balancePublisher: CurrentValuePublisher<Double>
@@ -34,13 +35,14 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
         let interactor = FinanceHomeInteractor(presenter: viewController)
         interactor.listener = listener
         
-        let superPayDashBoarBuilder = SuperPayDashBoardBuilder(dependency: component)
+        let superPayDashboardBuilder = SuperPayDashboardBuilder(dependency: component)
+        let cardOnFileDashboardBuilder = CardOnFileDashboardBuilder(dependency: component)
         
         
-        return FinanceHomeRouter(
-            interactor: interactor,
-            viewController: viewController,
-            superPayDashBoardBuildable: superPayDashBoarBuilder
+        return FinanceHomeRouter(interactor: interactor,
+                                 viewController: viewController,
+                                 superPayDashboardBuildable: superPayDashboardBuilder,
+                                 cardOnFileDashboardBuildable: cardOnFileDashboardBuilder
         )
     }
 }
